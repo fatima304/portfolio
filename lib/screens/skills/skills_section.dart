@@ -1,26 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/screens/skills/widgets/skill_chip.dart';
 import 'package:portfolio/styles/colors.dart';
 
-class ContactSection extends StatelessWidget {
-  const ContactSection({super.key});
+class SkillsSection extends StatelessWidget {
+  const SkillsSection({super.key, required this.screenSize});
+  final Size screenSize;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-      height: 500,
-      width: double.maxFinite,
+      width: screenSize.width,
       color: ColorStyle.light1,
       child: const Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            'Get in touch',
+            'Skills',
             style: TextStyle(
-              fontWeight: FontWeight.bold,
               fontSize: 24,
+              fontWeight: FontWeight.bold,
               color: ColorStyle.primWhite,
             ),
           ),
+          SizedBox(
+            height: 15,
+          ),
+          SkillChip(),
         ],
       ),
     );

@@ -5,7 +5,9 @@ import 'package:portfolio/styles/colors.dart';
 class HeaderDesktop extends StatelessWidget {
   const HeaderDesktop({
     super.key,
+    required this.onNavTap,
   });
+  final Function(int) onNavTap;
 
   @override
   Widget build(BuildContext context) {
@@ -27,15 +29,17 @@ class HeaderDesktop extends StatelessWidget {
       ),
       child: Row(
         children: [
-          const Text(
-            'Fatma',
+          Image.asset(
+            'assets/logo.png',
           ),
           const Spacer(),
           for (int i = 0; i < navTitle.length; i++)
             Padding(
               padding: const EdgeInsets.only(right: 10),
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  onNavTap(i);
+                },
                 child: Text(
                   navTitle[i],
                   style: const TextStyle(

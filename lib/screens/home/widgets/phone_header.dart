@@ -4,7 +4,7 @@ import 'package:portfolio/styles/colors.dart';
 class PhoneHeader extends StatelessWidget {
   const PhoneHeader({super.key, required this.onTap});
 
- final void Function()? onTap;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +22,8 @@ class PhoneHeader extends StatelessWidget {
       margin: const EdgeInsets.fromLTRB(40, 5, 20, 5),
       child: Row(
         children: [
-          const Text(
-            'Fatma',
+          Image.asset(
+            'assets/logo.png',
           ),
           const Spacer(),
           GestureDetector(

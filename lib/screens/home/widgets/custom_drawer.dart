@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/bar_items.dart';
 import 'package:portfolio/styles/colors.dart';
@@ -6,7 +5,9 @@ import 'package:portfolio/styles/colors.dart';
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({
     super.key,
+    required this.onNavTap,
   });
+  final Function(int) onNavTap;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,9 @@ class CustomDrawer extends StatelessWidget {
           ),
           for (int i = 0; i < navIcons.length; i++)
             ListTile(
-              onTap: () {},
+              onTap: () {
+                onNavTap(i);
+              },
               contentPadding: const EdgeInsets.symmetric(horizontal: 10),
               leading: Icon(
                 navIcons[i],
