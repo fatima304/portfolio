@@ -18,6 +18,7 @@ class ProjectSection extends StatelessWidget {
             ProjectCard(
               project: projects[i],
             ),
+        
         ],
       ),
     );

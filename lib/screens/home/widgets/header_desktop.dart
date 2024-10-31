@@ -33,23 +33,30 @@ class HeaderDesktop extends StatelessWidget {
             'assets/logo.png',
           ),
           const Spacer(),
-          for (int i = 0; i < navTitle.length; i++)
-            Padding(
-              padding: const EdgeInsets.only(right: 10),
-              child: TextButton(
-                onPressed: () {
-                  onNavTap(i);
-                },
-                child: Text(
-                  navTitle[i],
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    color: ColorStyle.primWhite,
-                  ),
-                ),
-              ),
-            ),
+          SizedBox(
+            width: 420,
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: navTitle.length,
+                itemBuilder: (context, i) {
+                  return Padding(
+                    padding: const EdgeInsets.only(right: 10),
+                    child: TextButton(
+                      onPressed: () {
+                        onNavTap(i);
+                      },
+                      child: Text(
+                        navTitle[i],
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          color: ColorStyle.primWhite,
+                        ),
+                      ),
+                    ),
+                  );
+                }),
+          )
         ],
       ),
     );

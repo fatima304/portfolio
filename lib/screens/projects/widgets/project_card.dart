@@ -9,11 +9,11 @@ class ProjectCard extends StatefulWidget {
   const ProjectCard({super.key, required this.project});
 
   @override
-  _ProjectCardState createState() => _ProjectCardState();
+  ProjectCardState createState() => ProjectCardState();
 }
 
-class _ProjectCardState extends State<ProjectCard> {
-  bool _isHovered = false;
+class ProjectCardState extends State<ProjectCard> {
+  bool isHovered = false;
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +22,8 @@ class _ProjectCardState extends State<ProjectCard> {
         launchurl(widget.project.githubLink);
       },
       child: MouseRegion(
-        onEnter: (_) => setState(() => _isHovered = true),
-        onExit: (_) => setState(() => _isHovered = false),
+        onEnter: (_) => setState(() => isHovered = true),
+        onExit: (_) => setState(() => isHovered = false),
         child: SizedBox(
           width: 300,
           height: 550,
@@ -77,7 +77,7 @@ class _ProjectCardState extends State<ProjectCard> {
                     ],
                   ),
                 ),
-                if (_isHovered)
+                if (isHovered)
                   Container(
                     decoration: BoxDecoration(
                       color: const Color.fromARGB(255, 69, 200, 187)

@@ -11,9 +11,9 @@ class ContactSection extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
       color: ColorStyle.light1,
-      child: Column(
+      child: const Column(
         children: [
-          const Text(
+          Text(
             'Contact',
             style: TextStyle(
               fontWeight: FontWeight.bold,
@@ -21,23 +21,24 @@ class ContactSection extends StatelessWidget {
               color: ColorStyle.primWhite,
             ),
           ),
-          const SizedBox(
+          SizedBox(
             height: 25,
           ),
-          const ContactField(),
-          const SizedBox(
+          ContactField(),
+          SizedBox(
             height: 15,
           ),
-          ConstrainedBox(
-            constraints: const BoxConstraints(
-              maxWidth: 250,
-            ),
-            child: const Divider(),
+          SizedBox(
+            // constraints: const BoxConstraints(
+            //   maxWidth: 250,
+            // ),
+            width: 250,
+            child: Divider(),
           ),
-          const SizedBox(
+          SizedBox(
             height: 15,
           ),
-          const ContactIcons(),
+          ContactIcons(),
         ],
       ),
     );

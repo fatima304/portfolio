@@ -26,24 +26,30 @@ class CustomDrawer extends StatelessWidget {
               ),
             ),
           ),
-          for (int i = 0; i < navIcons.length; i++)
-            ListTile(
-              onTap: () {
-                onNavTap(i);
-              },
-              contentPadding: const EdgeInsets.symmetric(horizontal: 10),
-              leading: Icon(
-                navIcons[i],
-              ),
-              title: Text(
-                navTitle[i],
-                style: const TextStyle(
-                  fontSize: 16,
-                  color: ColorStyle.primWhite,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
+          SizedBox(
+            height: 500,
+            child: ListView.builder(
+                itemCount: navIcons.length,
+                itemBuilder: (context, i) {
+                  return ListTile(
+                    onTap: () {
+                      onNavTap(i);
+                    },
+                    contentPadding: const EdgeInsets.symmetric(horizontal: 10),
+                    leading: Icon(
+                      navIcons[i],
+                    ),
+                    title: Text(
+                      navTitle[i],
+                      style: const TextStyle(
+                        fontSize: 16,
+                        color: ColorStyle.primWhite,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  );
+                }),
+          ),
         ],
       ),
     );
